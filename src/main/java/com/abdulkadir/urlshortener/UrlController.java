@@ -29,14 +29,14 @@ public class UrlController {
         return "main";
     }
 
-    @PostMapping("/")  //              / ne? ..............................
+    @PostMapping("/")
     public String showPage(@ModelAttribute("url") Url url, Model model) {
         String hashText = "";
         try {
             String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
             StringBuilder sb = new StringBuilder(timeStamp);
             sb.append(url.getPureUrl());
-            MessageDigest m = MessageDigest.getInstance("MD5"); // MD5 nasıl açlışıyor
+            MessageDigest m = MessageDigest.getInstance("MD5");
             m.update(sb.toString().getBytes());
             byte[] digest = m.digest();
             BigInteger bigInt = new BigInteger(1, digest);
@@ -48,14 +48,14 @@ public class UrlController {
             url.setHashUrl(hashText); //urls can be conflict
             urlRepository.insert(url);
         } catch (Exception e) {
-            e.printStackTrace();     //                Bu hata ne?   ..............................................
+            e.printStackTrace();
         }
         hashText="localhost:8080/"+hashText;
         model.addAttribute("hashURL", hashText);
         return "success";
     }
 
-    @GetMapping("/{path}")    // path?
+    @GetMapping("/{path}")
     public ResponseEntity<Object> method(@PathVariable("path")String path) throws URISyntaxException {
         Url url = urlRepository.findByHashUrl(path).orElse(new Url("1", "https://github.com/AbdulkadirKoyuncu", "56"));
         //System.out.println(url.getHashUrl());
