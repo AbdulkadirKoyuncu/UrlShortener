@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--<p th:text="'url: ' + ${customURL}" />-->
+<form th:action="@{/}" th:object="${url}" method="post">
+  <input type="text" id="pureUrl" name="pureUrl" />
+  <button type="submit">Short URL</button>
+</form>
+<span style="display: none" >İRFAN BEBEĞİM<3</span>
+</body>
+</html>
