@@ -58,7 +58,7 @@ public class UrlController {
     @GetMapping("/{path}")
     public ResponseEntity<Object> method(@PathVariable("path")String path) throws URISyntaxException {
         Url url = urlRepository.findByHashUrl(path).orElse(new Url("1", "https://github.com/AbdulkadirKoyuncu", "56"));
-        //System.out.println(url.getHashUrl());
+        System.out.println(url.getHashUrl());
         URI uri = new URI(url.getPureUrl());
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setLocation(uri);
