@@ -4,6 +4,6 @@ Url Shortener is a program that converts long urls into Short Urls. When user op
 
 ---
 
->A UrlShortener made in the **Java** and **Spring** framework. Used **MongoDB** for databa 
+>A UrlShortener made in the **Java** and **Spring** framework. Used **MongoDB** for database.
 
   
