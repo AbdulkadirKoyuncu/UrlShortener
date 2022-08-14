@@ -17,10 +17,10 @@ import java.text.SimpleDateFormat;
 public class UrlController {
     private final UrlRepository urlRepository;
 
-
     public UrlController(UrlRepository urlRepository) {
         this.urlRepository = urlRepository;
     }
+
     @GetMapping("/")
     public String showPage(Model model){
         model.addAttribute("url",new Url());
@@ -64,10 +64,9 @@ public class UrlController {
         URI uri = new URI(url.getPureUrl());
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setLocation(uri);
-
-
         return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
     }
+
     // Count for one Url
     @RequestMapping("/{path}/count")
     public String countPage(@PathVariable("path")String path, Model model){
@@ -75,6 +74,7 @@ public class UrlController {
         model.addAttribute("countClick",url.getClickCount());
         return "countSuccess";
     }
+
     //Count for all Urls
     @GetMapping("/urls")
     public String showUrls(Model model){

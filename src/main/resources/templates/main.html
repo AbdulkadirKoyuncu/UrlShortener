@@ -6,7 +6,6 @@
 
 </head>
 <body>
-<!--<p th:text="'url: ' + ${customURL}" />-->
 <form th:action="@{/}" th:object="${url}" method="post">
   <input type="text" id="pureUrl" name="pureUrl" />
   <button type="submit">Short URL</button>
@@ -16,8 +15,6 @@
 <button type="submit">Total Url Clicks</button>
 </form>
 </div>
-
-<span th:text="${clickCount}"></span>
 <span style="display: none" >İRFAN BEBEĞİM<3</span>
 </body>
 </html>

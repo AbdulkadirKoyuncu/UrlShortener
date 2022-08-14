@@ -20,7 +20,6 @@ public class Url {
     @Field(name = "ClickCount")
     private int clickCount;
 
-
     public Url() {
     }
 
@@ -30,5 +29,4 @@ public class Url {
         this.hashUrl = hashUrl;
         this.clickCount=clickCount;
     }
-
 }
