@@ -8,5 +8,4 @@ import java.util.Optional;
 public interface UrlRepository extends MongoRepository<Url,String> {
     @Query("{'abdulkadir': ?0}")
     Optional<Url> findByHashUrl(String s);
-
 }
