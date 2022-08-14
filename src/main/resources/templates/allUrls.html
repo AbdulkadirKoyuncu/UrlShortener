@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr th:each="url: ${urls}">
+    <td th:text="${url.pureUrl}" />
+    <td th:text="${url.hashUrl}" />
+    <td th:text="${url.clickCount}" />
+    <br>
+</tr>
+</body>
+</html>
